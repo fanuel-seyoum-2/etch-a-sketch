@@ -6,6 +6,7 @@
 }
 body {
 	display: flex;
+	justify-content: center;
 }
 .container {
 	display: flex;
@@ -23,4 +24,7 @@ body {
 
 	display: flex;
 	flex: 1;
+}
+.hover-over {
+	background-color: black;
 }
