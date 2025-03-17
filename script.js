@@ -12,4 +12,9 @@ function createNbyNGrid(N, container) {
 		parDiv.appendChild(parentDiv);
 	}
 }
-createNbyNGrid(4, ".container");
+createNbyNGrid(16, ".container");
+
+let container = document.querySelector(".container");
+container.addEventListener("mouseover", (e) => {
+	e.target.classList.toggle("hover-over");
+});
