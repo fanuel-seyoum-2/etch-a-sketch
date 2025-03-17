@@ -6,9 +6,42 @@
 }
 body {
 	display: flex;
+	flex-flow: column nowrap;
+	gap: 40px;
+}
+header {
+	background-color: #1F2937;
+	color: #F9FAF8;
+
+	font-weight: 700;
+	font-size: 21px;
+
+	padding: 50px 200px;
+	gap: 100px;
+
+	display: flex;
+	flex: 1 1 auto;
 	justify-content: center;
+	flex-flow: column wrap;
+}
+main {
+	display: flex;
+	flex-flow: column nowrap;
+	gap: 40px;
+	justify-content: center;
+	align-items: center;
+}
+.bt-list img {
+	border-radius: 8px;
+	height: 30px;
+	width: auto;
+}
+.bt-list button {
+	border-radius: 20px;
 }
 .container {
+	align-self: center;
+
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -23,7 +56,7 @@ body {
 	height: 30px;
 
 	display: flex;
-	flex: 1;
+	flex: initial;
 }
 .hover-over {
 	background-color: black;
