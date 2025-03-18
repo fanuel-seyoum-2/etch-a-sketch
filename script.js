@@ -46,12 +46,15 @@ function createAndAppend(parentDiv, childType, childAttrs, attrValues) {
 
 function triggerHoverEffect(divName) {
 	let divN = document.querySelector(divName);
-	let [color, opacity] = ["black", 0.1];
 	divN.addEventListener("mouseover", (e) => {
+		let opacity = (+e.target.style.opacity < 1) ? 
+			+e.target.style.opacity + 0.1 : 0;
+		let rd = genRandomVal;
+		
+		let color = `rgb(${rd(MAX_INTENSITY)}, ${rd(MAX_INTENSITY)}, ${rd(MAX_INTENSITY)})`;
+
 		e.target.setAttribute("style",
-		` background-color: ${color};
-		  opacity: ${opacity};
-		`
+		`background-color: ${color}; opacity: ${opacity};`
 		);
 	});
 }
