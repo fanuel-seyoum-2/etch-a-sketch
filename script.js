@@ -1,3 +1,6 @@
+function genRandomVal(reach) {
+	return Math.floor(Math.random() * (reach + 1));
+}
 /* createNbyMGrid
  *	Creates an N by M grid of squares and appends them to a container
  */
