@@ -17,6 +17,13 @@ function createNbyMGrid(N, M, container) {
 		parDiv.appendChild(parentDiv);
 	}
 }
+
+function removeContainer(parentDiv, childDiv) {
+	let parentD = document.querySelector(parentDiv);
+	let childD = document.querySelector(childDiv);
+	parentD.removeChild(childD);
+}
+
 createNbyMGrid(16, 16, ".container");
 
 let container = document.querySelector(".container");
