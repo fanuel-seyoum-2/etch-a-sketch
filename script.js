@@ -39,7 +39,7 @@ function createAndAppend(parentDiv, childType, childAttrs, attrValues) {
 	parentD.appendChild(childD);
 }
 
-function triggerListener(divName) {
+function triggerHoverEffect(divName) {
 	let divN = document.querySelector(divName);
 	divN.addEventListener("mouseover", (e) => {
 		e.target.classList.toggle("hover-over");
@@ -47,14 +47,16 @@ function triggerListener(divName) {
 }
 
 createNbyMGrid(16, 16, ".container");
-triggerListener(".container");
+triggerHoverEffect(".container");
 
 let promptBt = document.querySelector(".bt-list");
 promptBt.addEventListener("click", () => {
 	let N = +prompt("How large would you like the grid to be? [Rows]") || 16;
+	if (N > 100) N = 100;
 	let M = +prompt("How large would you like the grid to be? [Columns]") || 16;
+	if (M > 100) M = 100;
 	removeContainer(".ct", ".container");
 	createAndAppend(".ct", "div", ["class"], ["container"]);
 	createNbyMGrid(N, M, ".container");
-	triggerListener(".container");
+	triggerHoverEffect(".container");
 });
