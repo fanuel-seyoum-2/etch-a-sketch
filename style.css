@@ -1,6 +1,8 @@
-* {
-	margin: 0;
-	padding: 0;
+*,
+*::before,
+*::after {
+	margin: 0px;
+	padding: 0px;
 
 	box-sizing: border-box;
 }
@@ -40,23 +42,29 @@ main {
 	border-radius: 20px;
 }
 .container {
-	align-self: center;
+	width: 700px;
+	height: 700px;
 
 	display: flex;
 	flex-flow: column nowrap;
+	flex: none;
 }
 .row {	
+	width: inherit;
 	display: flex;
 	flex-flow: row nowrap;
+	flex: 1 1 auto;
+
+	align-items: stretch;
+	align-content: stretch;
 }
 .col {
 	border: solid 1px lightgrey;
 
-	width: 30px;
-	height: 30px;
+	height: inherit;
 
 	display: flex;
-	flex: initial;
+ 	flex: 1 1 auto;
 }
 .hover-over {
 	background-color: black;
