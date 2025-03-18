@@ -24,6 +24,21 @@ function removeContainer(parentDiv, childDiv) {
 	parentD.removeChild(childD);
 }
 
+/* createAndAppend
+*	- creates a child of type childType
+*	- sets the attributes of the child
+* 	- appends the child to a parentDiv
+*/
+function createAndAppend(parentDiv, childType, childAttrs, attrValues) {
+	let parentD = document.querySelector(parentDiv);
+	let childD = document.createElement(childType);
+
+	for (let i = 0; i < childAttrs.length; i++)
+		childD.setAttribute(childAttrs[i], attrValues[i]);
+	
+	parentD.appendChild(childD);
+}
+
 createNbyMGrid(16, 16, ".container");
 
 let container = document.querySelector(".container");
