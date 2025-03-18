@@ -48,3 +48,13 @@ function triggerListener(divName) {
 
 createNbyMGrid(16, 16, ".container");
 triggerListener(".container");
+
+let promptBt = document.querySelector(".bt-list");
+promptBt.addEventListener("click", () => {
+	let N = +prompt("How large would you like the grid to be? [Rows]") || 16;
+	let M = +prompt("How large would you like the grid to be? [Columns]") || 16;
+	removeContainer(".ct", ".container");
+	createAndAppend(".ct", "div", ["class"], ["container"]);
+	createNbyMGrid(N, M, ".container");
+	triggerListener(".container");
+});
