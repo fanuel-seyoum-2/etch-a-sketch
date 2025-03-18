@@ -1,3 +1,5 @@
+const MAX_INTENSITY = 255;
+
 function genRandomVal(reach) {
 	return Math.floor(Math.random() * (reach + 1));
 }
@@ -12,7 +14,7 @@ function createNbyMGrid(N, M, container) {
 		// New "col" divs will be created and added to a "row" div
 		for (let i = 0; i < M; i++) {
 			let div = document.createElement("div");
-			div.setAttribute("class", `col col${i}`);
+			div.setAttribute("class", `col col${i} row${j}-col${i}`);
 			parentDiv.appendChild(div);
 		}
 		// The "row" div, containing M "col" div 
@@ -44,8 +46,13 @@ function createAndAppend(parentDiv, childType, childAttrs, attrValues) {
 
 function triggerHoverEffect(divName) {
 	let divN = document.querySelector(divName);
+	let [color, opacity] = ["black", 0.1];
 	divN.addEventListener("mouseover", (e) => {
-		e.target.classList.toggle("hover-over");
+		e.target.setAttribute("style",
+		` background-color: ${color};
+		  opacity: ${opacity};
+		`
+		);
 	});
 }
 
