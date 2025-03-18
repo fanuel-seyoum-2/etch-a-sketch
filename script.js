@@ -39,9 +39,12 @@ function createAndAppend(parentDiv, childType, childAttrs, attrValues) {
 	parentD.appendChild(childD);
 }
 
-createNbyMGrid(16, 16, ".container");
+function triggerListener(divName) {
+	let divN = document.querySelector(divName);
+	divN.addEventListener("mouseover", (e) => {
+		e.target.classList.toggle("hover-over");
+	});
+}
 
-let container = document.querySelector(".container");
-container.addEventListener("mouseover", (e) => {
-	e.target.classList.toggle("hover-over");
-});
+createNbyMGrid(16, 16, ".container");
+triggerListener(".container");
